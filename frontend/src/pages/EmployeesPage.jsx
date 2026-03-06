@@ -79,14 +79,9 @@ export default function EmployeesPage() {
   return (
     <div>
       <div className="sm:flex sm:items-center sm:justify-between mb-8">
-        <div>
-          <h1 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
-            Employees
-          </h1>
-          <p className="mt-1 text-sm text-gray-500">
-            Manage your team directory and instantly track today's attendance.
-          </p>
-        </div>
+        <p className="mt-1 text-sm text-gray-500">
+          Manage your team directory and instantly track today's attendance.
+        </p>
         <div className="mt-4 sm:ml-4 sm:mt-0">
           <Button onClick={() => setIsModalOpen(true)} className="flex items-center gap-2">
             <Plus className="h-4 w-4" />

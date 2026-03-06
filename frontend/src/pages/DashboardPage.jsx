@@ -3,6 +3,7 @@ import { Users, UserCheck, UserX } from 'lucide-react';
 import { useEmployees } from '../hooks/useEmployees';
 import { useAllAttendance } from '../hooks/useAttendance';
 import { format } from 'date-fns';
+import EmployeesPage from './EmployeesPage';
 
 export default function DashboardPage() {
   const { data: employees, isLoading: employeesLoading } = useEmployees();
@@ -31,9 +32,6 @@ export default function DashboardPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
-          Dashboard
-        </h1>
         <p className="mt-1 text-sm text-gray-500">
           Overview of your company's human resources and attendance for today, {format(new Date(), 'MMMM d, yyyy')}.
         </p>
@@ -65,15 +63,8 @@ export default function DashboardPage() {
           ))}
         </div>
       )}
-
-      {/* Placeholder for future charts or detailed lists on the dashboard */}
-      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <div className="bg-white rounded-xl shadow-card border border-gray-100 p-6 flex flex-col items-center justify-center min-h-[300px] text-gray-400">
-          <p>Recent HR Activity Chart (Coming Soon)</p>
-        </div>
-         <div className="bg-white rounded-xl shadow-card border border-gray-100 p-6 flex flex-col items-center justify-center min-h-[300px] text-gray-400">
-          <p>Upcoming Birthdays (Coming Soon)</p>
-        </div>
+      <div className="mt-8">
+      <EmployeesPage/>
       </div>
     </div>
   );
